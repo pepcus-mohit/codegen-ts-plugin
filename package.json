@@ -1,0 +1,56 @@
+{
+  "name": "codegen-ts-plugin",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "tsc --project .",
+    "deploy:tsn": "ts-node ./src/index.ts",
+    "tsc": "tsc --build",
+    "lint": "eslint **/*.ts",
+    "test": "jest --no-watchman --config ../../../../jest.config.js"
+  },
+  "author": "Mohit Saladiya",
+  "license": "ISC",
+  "dependencies": {
+    "@graphql-codegen/plugin-helpers": "^2.3.0",
+    "@graphql-codegen/schema-ast": "^2.4.0",
+    "@graphql-codegen/testing": "^1.17.7",
+    "@graphql-codegen/visitor-plugin-common": "2.5.1",
+    "@types/jest": "^27.0.3",
+    "auto-bind": "^5.0.1",
+    "cypress": "^9.1.0",
+    "graphql": "^16.0.1",
+    "tslib": "~2.3.0",
+    "typescript": "^4.5.2"
+  },
+  "peerDependencies": {
+    "graphql": "^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    },
+    "./*": {
+      "require": "./dist/*.js",
+      "import": "./dist/*.mjs"
+    }
+  },
+  "typings": "dist/index.d.ts",
+  "typescript": {
+    "definition": "dist/index.d.ts"
+  },
+  "buildOptions": {
+    "input": "./src/index.ts"
+  },
+  "publishConfig": {
+    "directory": "dist",
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pepcus-mohit/codegen-ts-plugin.git"
+  }
+}
