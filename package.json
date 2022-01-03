@@ -7,14 +7,19 @@
     "deploy:tsn": "ts-node ./src/index.ts",
     "tsc": "tsc --build",
     "lint": "eslint **/*.ts",
-    "test": "jest --no-watchman --config ../../../../jest.config.js"
+    "test": "jest --no-watchman --config ../../../../jest.config.js",
+    "gen": "graphql-codegen --config codegen.yml"
   },
   "author": "Mohit Saladiya",
   "license": "ISC",
   "dependencies": {
+    "@graphql-codegen/named-operations-object": "^2.2.1",
     "@graphql-codegen/plugin-helpers": "^2.3.0",
     "@graphql-codegen/schema-ast": "^2.4.0",
     "@graphql-codegen/testing": "^1.17.7",
+    "@graphql-codegen/typescript": "^2.4.2",
+    "@graphql-codegen/typescript-operations": "^2.2.2",
+    "@graphql-codegen/typescript-react-apollo": "^3.2.3",
     "@graphql-codegen/visitor-plugin-common": "2.5.1",
     "@types/jest": "^27.0.3",
     "auto-bind": "^5.0.1",
@@ -52,5 +57,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/pepcus-mohit/codegen-ts-plugin.git"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^2.3.1"
   }
 }
